@@ -1,0 +1,337 @@
+/* Custom Properties for Colors */
+:root {
+    --color-gold: #FFD700;        /* Emas */
+    --color-silver: #C0C0C0;      /* Perak */
+    --color-dark-chocolate: #4A2C2A; /* Dark Chocolate */
+    --color-off-white: #F8F8F8;    /* Warna latar belakang ringan */
+    --color-text-light: #F0F0F0;   /* Warna teks terang */
+    --color-text-dark: #333333;    /* Warna teks gelap */
+    --color-button-hover: #5A3C3A; /* Hover untuk Dark Chocolate */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-off-white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--color-dark-chocolate);
+}
+
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+    color: var(--color-gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2em;
+    text-align: center;
+    color: var(--color-silver);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    text-align: center;
+    color: var(--color-text-dark);
+    margin-top: -10px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Header/Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-dark-chocolate) 0%, #3a1e1d 100%);
+    color: var(--color-text-light);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For fade-in effect */
+}
+
+.hero-section h1 {
+    color: var(--color-gold);
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    color: var(--color-silver);
+}
+
+.logo-placeholder {
+    margin-top: 30px;
+    /* Basic styling for logo, replace with actual logo image */
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; /* Ensure image fits */
+}
+
+.logo-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.hero-section h1 { animation-delay: 0.5s; }
+.hero-section p { animation-delay: 1s; }
+.hero-section .logo-placeholder { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* General Section Styling */
+section {
+    padding: 60px 0;
+}
+
+.intro-section {
+    background-color: var(--color-off-white);
+    color: var(--color-text-dark);
+    border-bottom: 2px solid var(--color-silver);
+}
+
+.technique-section {
+    background-color: var(--color-text-light);
+    padding-bottom: 80px; /* More space for button */
+    border-bottom: 2px solid var(--color-silver);
+}
+
+.pembaca-demo {
+    text-align: center;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--color-silver);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 600px; /* Max width for demo video/gif */
+}
+
+.pembaca-demo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pembaca-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.pembaca-list li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.slider-info {
+    background-color: rgba(var(--color-dark-chocolate), 0.05);
+    border-left: 5px solid var(--color-dark-chocolate);
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 700px;
+    border-radius: 5px;
+}
+
+.slider-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.slider-info i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.slider-info .gold { color: var(--color-gold); }
+.slider-info .silver { color: var(--color-silver); }
+.slider-info .dark-chocolate { color: var(--color-dark-chocolate); }
+
+
+.btn-main {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+    background-color: var(--color-dark-chocolate);
+    color: var(--color-gold);
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-main:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-3px);
+}
+
+.other-techniques-section {
+    background-color: var(--color-off-white);
+    padding: 60px 0 80px;
+}
+
+.techniques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.technique-item {
+    background-color: #ffffff;
+    border: 1px solid var(--color-silver);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.technique-item:hover {
+    transform: translateY(-5px);
+}
+
+.technique-item .icon-placeholder {
+    font-size: 3em;
+    color: var(--color-dark-chocolate);
+    margin-bottom: 15px;
+}
+
+.technique-item h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--color-dark-chocolate);
+}
+
+.technique-item p {
+    font-size: 0.95em;
+    color: var(--color-text-dark);
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--color-dark-chocolate);
+    color: var(--color-text-light);
+    padding: 60px 0;
+}
+
+.about-section h3 {
+    color: var(--color-gold);
+    text-shadow: none;
+}
+
+.about-section p {
+    color: var(--color-silver);
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto 0;
+}
+
+/* Footer */
+footer {
+    background-color: #2a1817; /* Even darker shade of dark chocolate */
+    color: var(--color-silver);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: var(--color-silver);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-gold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.8em;
+    }
+    .hero-section {
+        padding: 60px 0;
+    }
+    .btn-main {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+    .techniques-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+    .technique-item {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .pembaca-list li {
+        font-size: 1.1em;
+    }
+}

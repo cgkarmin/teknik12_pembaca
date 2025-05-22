@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEMBACA App: Kuasai Peribahasa!</title>
+    <link rel="stylesheet" href="css/pembaca_app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Kembali ke Teknik 12</a>
+            <h1>Aplikasi PEMBACA</h1>
+            <p>Kuasai Peribahasa dengan Mudah!</p>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="container">
+
+            <section class="control-panel">
+                <h2>Cari Peribahasa Anda</h2>
+                <div class="search-input">
+                    <input type="text" id="peribahasaSearch" placeholder="Cari peribahasa mengikut kata kunci...">
+                    <button id="searchButton"><i class="fas fa-search"></i> Cari</button>
+                </div>
+                <div class="search-by-theme">
+                    <label for="themeSelect">Atau pilih mengikut Tema:</label>
+                    <select id="themeSelect">
+                        <option value="">-- Pilih Tema --</option>
+                        </select>
+                </div>
+
+                <div id="searchResultsContainer" class="search-results-container" style="display: none;">
+                    <h4>Hasil Carian:</h4>
+                    <ul id="searchResultsList" class="search-results-list">
+                        </ul>
+                </div>
+                <div class="grade-term-selection">
+                    <h3>Pilih Darjah & Penggal</h3>
+                    <div class="selection-group">
+                        <label>Pilih Darjah:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="darjah34" name="darjah" value="sr3_4" checked>
+                            <label for="darjah34">Darjah 3-4</label>
+                            <input type="radio" id="darjah56" name="darjah" value="sr5_6">
+                            <label for="darjah56">Darjah 5-6</label>
+                        </div>
+                    </div>
+                    <div class="selection-group">
+                        <label>Pilih Penggal:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="penggal1" name="penggal" value="penggal1" checked>
+                            <label for="penggal1">Penggal 1</label>
+                            <input type="radio" id="penggal2" name="penggal" value="penggal2">
+                            <label for="penggal2">Penggal 2</label>
+                            <input type="radio" id="penggal3" name="penggal" value="penggal3">
+                            <label for="penggal3">Penggal 3</label>
+                            </div>
+                    </div>
+                </div>
+                <div class="help-level-control">
+                    <h3>Tahap Bantuan Otomatis</h3>
+                    <div class="slider-wrapper">
+                        <input type="range" min="0" max="2" value="0" class="slider" id="helpLevelSlider">
+                        <div class="slider-labels">
+                            <span>Dasar</span>
+                            <span>Pertengahan</span>
+                            <span>Pakar</span>
+                        </div>
+                    </div>
+                    <p id="currentHelpLevel">Tahap Semasa: Dasar</p>
+                </div>
+            </section>
+
+            <section class="pembaca-output" id="pembacaAutoOutput">
+                <h2>Paparan PEMBACA Otomatis</h2>
+                <div class="output-field">
+                    <label for="peAuto">PE (Peribahasa):</label>
+                    <p id="peAuto" class="output-text"></p>
+                </div>
+                <div class="output-field">
+                    <label for="mAuto">M (Makna):</label>
+                    <p id="mAuto" class="output-text"></p>
+                </div>
+                <div class="output-field">
+                    <label for="baAuto">BA (Bahagian-bahagian):</label>
+                    <ul id="baAuto" class="output-list"></ul>
+                </div>
+                <div class="output-field">
+                    <label for="cAuto">C (Contoh):</label>
+                    <ul id="cAuto" class="output-list"></ul>
+                </div>
+                <div class="output-field">
+                    <label>A (Ayat - Pilih Genre):</label>
+                    <div class="genre-selector">
+                        <button class="genre-btn active" data-genre="perbincangan">Perbincangan</button>
+                        <button class="genre-btn" data-genre="naratif">Naratif</button>
+                        <button class="genre-btn" data-genre="skrip">Skrip Drama</button>
+                    </div>
+                    <p id="aAuto" class="output-text genre-content"></p>
+                </div>
+            </section>
+
+            <section class="pembaca-practice" id="pembacaManualPractice">
+                <h2>Latihan PEMBACA Anda</h2>
+                <p class="instruction-text">Isi medan di bawah berdasarkan pemahaman anda.</p>
+                <div class="input-field">
+                    <label for="peManual">PE (Peribahasa):</label>
+                    <input type="text" id="peManual" placeholder="Tulis peribahasa di sini...">
+                </div>
+                <div class="input-field">
+                    <label for="mManual">M (Makna):</label>
+                    <textarea id="mManual" rows="3" placeholder="Tulis makna peribahasa..."></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="baManual">BA (Bahagian-bahagian):</label>
+                    <textarea id="baManual" rows="3" placeholder="Senaraikan bahagian-bahagian penting (satu poin setiap baris)..."></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="cManual">C (Contoh):</label>
+                    <textarea id="cManual" rows="4" placeholder="Berikan contoh-contoh (satu contoh setiap baris)..."></textarea>
+                </div>
+                <div class="input-field">
+                    <label>A (Ayat Anda - Pilih Genre):</label>
+                     <div class="genre-selector">
+                        <button class="genre-btn active" data-genre="perbincangan">Perbincangan</button>
+                        <button class="genre-btn" data-genre="naratif">Naratif</button>
+                        <button class="genre-btn" data-genre="skrip">Skrip Drama</button>
+                    </div>
+                    <textarea id="aManual" rows="8" placeholder="Tulis perenggan/skrip anda di sini..."></textarea>
+                </div>
+                <button class="btn-submit">Semak Jawapan</button>
+                <div id="feedbackArea" class="feedback-area"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>&copy; 2025 Aplikasi PEMBACA. Hak Cipta Terpelihara.</p>
+        </div>
+    </footer>
+
+    <script src="js/pembaca_app.js"></script>
+</body>
+</html>
