@@ -1,0 +1,1 @@
+# teknik12_pembaca
